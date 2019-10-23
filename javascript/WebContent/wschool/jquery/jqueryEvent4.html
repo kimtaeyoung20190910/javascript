@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>CreateTable</button>
+    <script>
+        $("button").on("click", function () {
+            $("body table").remove(); //1
+            var table = $("<table>");
+            table.attr({ "id": "tb1", "border": "1" });
+            var tr, th1, th2, th3, th4, td1, td2, td3, td4, btn;
+            tr = $("<tr>");
+            th1 = $("<th>").text("이름");
+            th2 = $("<th>").text("나이");
+            th3 = $("<th>").text("전화번호");
+            th4 = $("<th>").text("삭제");
+            tr.append(th1, th2, th3, th4);
+            table.append(tr);
+            
+            tr = $("<tr>");
+            td1 = $("<td>").text("홍길동");
+            td2 = $("<td>").text("35");
+            td3 = $("<td>").text("010-1111-1111");
+            btn = $("<button>").text("Del");
+            td4 = $("<td>").html(btn.click(delFunc)); //delFunc
+            tr.append(td1, td2, td3, td4);
+            table.append(tr);
+            
+            tr = $("<tr>");
+            td1 = $("<td>").text("김길동");
+            td2 = $("<td>").text("40");
+            td3 = $("<td>").text("010-2222-2222");
+            btn = $("<button>").text("Del");
+            td4 = $("<td>").html(btn.click(delFunc)); 
+            tr.append(td1, td2, td3, td4);
+            table.append(tr);
+            $("body").append(table);
+        });
+
+        function delFunc(){
+            $(this).parent().parent().remove();
+        }
+    </script>
+</body>
+</html>

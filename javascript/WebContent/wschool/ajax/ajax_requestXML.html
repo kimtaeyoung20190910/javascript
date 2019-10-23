@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="loadXML()">Get XML</button>
+    <p id="showXML"></p>
+    <script>
+        function loadXML() {
+            var xhtp = new XMLHttpRequest();
+            xhtp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getXML(this);
+                }
+            }
+            xhtp.open("get", "cd_catalog.xml");
+            xhtp.send();
+        }
+        function getXML(elem) {
+            //<table border=1>
+            //<tr<<th>Title</th><th>Arthist</th><th>Country</th>
+            //createElement("tr")
+            //createElement("td").appendChild(createTextNode())
+            //<td>cds[0].childNodes[1].childNodes[0].nodeValue;</td>
+            console.log(elem.responseXML);
+            var xml = elem.responseXML;
+            var cds = xml.getElementsByTagName("CD");
+            console.log(cds[0]);
+            var fields = cds[0].childNodes.length;
+            var tag = "<table border=1>";
+            tag += <tr><th>Title</th><th>Arthist</th><th>Country</th><th>Ouper</th><th>Price</th><th>Year</th></tr>
+            for (var i = 0; i < cds.length; i++) {
+                tag += "<tr>"
+                for (var j = 0; j < fields.length; i++) {
+                    if (j % 2 == 1)
+                        tag += "<td>"
+                            + cds[i].childNodes[j].childNodes[0].nodeValue
+                            + "<td>";
+                }
+                tag += "</tr>";
+                document.getElementById("showXML").innerHTML = tag;
+            }
+        }
+    </script>
+</body>
+
+</html>

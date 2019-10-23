@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var fruits = ["Banana", "Apple", "Melon", "Mango"];
+        // pop(last), shift(first)
+        var len = fruits.length;
+        // for(var i=0; i<len.length; i++){
+        //     console.log(fruits.join(",")); //Banana, Apple, Melon, Mango
+            
+        //     fruits.pop(); //4개 배열에서 하나씩 빠진값 출력.
+        // }
+
+        // push, unshift
+        fruits.push("kiwi"); 
+        fruits.unshift("Strawberry");
+        console.log(fruits.join("-"));
+        
+        fruits[fruits.length] = "WaterMelon"; //fruits[6]
+        fruits[fruits.length] = "Grape";
+        fruits[10] = "Lemon"; //넘으면 ,,,
+        console.log(fruits.join(","));
+
+        </script>
+</body>
+</html>

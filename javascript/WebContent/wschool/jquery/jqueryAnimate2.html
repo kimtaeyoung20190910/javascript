@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            $("button").eq(0).on("click", function () {
+                $("#div1").fadeIn();
+                $("#div2").fadeIn("slow");
+                $("#div3").fadeIn(3000);
+            })
+            $("button").eq(1).on("click", function () {
+                $("#div1").fadeOut();
+                $("#div2").fadeOut("slow");
+                $("#div3").fadeOut(3000);
+            })
+            $("button").eq(2).on("click", function () {
+                $("#div1").fadeToggle().fadeTo("slow", 0.15); //(0에 가까울수록 높아짐)투명도
+                $("#div2").fadeToggle("slow").fadeTo("slow",0.5);
+                $("#div3").fadeToggle(3000).fadeTo("slow", 0.7);
+            })
+            
+        });
+    </script>
+</head>
+
+<body>
+    <button>Click to FadeIn</button>
+    <button>Click to FadeOut</button>
+    <button>Click to FadeToggle</button>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:pink;"></div>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:skyblue;"></div>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:purple;"></div>
+</body>
+
+</html>

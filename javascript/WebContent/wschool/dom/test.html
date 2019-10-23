@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+            이름: <input type="text" name="name"><br>
+            아이디: <input type="text" id="id"><br>
+            비번: <input type="password" psw=""><br>
+            <button id="btn">확인</button>
+        <script>
+            var btn = document.getElementById("btn");
+            btn.addEventListener("click", );
+
+            var elem = document.getElementById("intro").innerHTML;
+            document.getElementById("click").innerHTML = elem;
+            var elem1 = document.getElementsByTagName("p");
+            console.log(elem1);
+            document.getElementById("show2").innerHTML = elem1[1].innerHTML;
+
+            function onFocus() {
+            var elem= document.getElementById('fName');
+            elem.style.background = "pink";
+        }
+        function mDown(a) {
+            var elem= document.getElementById('fName');
+           elem.style.background = "white";
+        }
+        function mUp(a) {
+            a.style.backgroundColor = "royalblue";
+            a.innerHTML = "Click";
+        }
+        function mOver(a) {
+            console.log(a);
+            a.innerHTML = "Thank you";
+        }
+        function mOut(a){
+            console.log(a);
+            a.innerHTML = "MouseOver"
+        }
+        </script>
+    </body>
+
+</html>

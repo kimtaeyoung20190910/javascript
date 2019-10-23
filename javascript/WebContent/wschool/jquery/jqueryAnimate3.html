@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        #panel, #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: saddlebrown;
+            border: solid 1px sienna;
+        }
+        #panel {
+            padding: 50px;
+            display: block; 
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flip">Click to Slide</div>
+    <div id="panel">Hello World</div>
+    <script>
+        $("#flip").on("click", function(){
+            $("#panel").slideUp(3000);
+        })
+    </script>
+</body>
+
+</html>
